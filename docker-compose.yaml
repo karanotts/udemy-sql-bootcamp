@@ -9,8 +9,9 @@ services:
     ports:
       - "3306:3306"
     volumes:
-    - sql-bootcamp:/var/lib/mysql
+    - mysql:/var/lib/mysql
+    - ./book_data.sql:/docker-entrypoint-initdb.d/book_data.sql
 volumes:
-  sql-bootcamp:
+  mysql:
 
-# start with docker-compose up -d && docker-compose exec db mysql -uroot -proot
+# start with "docker-compose up -d" "docker-compose exec db mysql -uroot -proot"
